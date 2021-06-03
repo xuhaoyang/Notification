@@ -28,9 +28,9 @@
         android:text="Channel Manager" />
 
     <Button
-        android:id="@+id/btnTest"
+        android:id="@+id/btnOpenAppNotificationSettings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Test" />
+        android:text="打开APP通知设置" />
 
 </LinearLayout>
