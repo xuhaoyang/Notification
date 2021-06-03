@@ -26,6 +26,15 @@ class GroupActivity : BaseActivity() {
         return true
     }
 
+    //todo !!!! 华为这么用有BUG
+    /**
+     * 先调用 generateGroupNotification 再调用generateOtherOneGroupNotification
+     *
+     * 具体表现是 先有一组 Group通知，后弹出的第三条通知，会加入这个Group中
+     *
+     * 华为系统BUG，第三条通知会覆盖先前那组Group
+     */
+
     private fun generateGroupNotification() {
         val notification = GroupNotification(this, GroupData(summaryId = 200))
         notification.show()
