@@ -31,6 +31,7 @@ class ChannelAdapter(private val context: Context, private val callback: Callbac
 
     class ChannelViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val name: TextView = view.findViewById(R.id.name)
+        val content: TextView = view.findViewById(R.id.content)
 
     }
 
@@ -48,6 +49,7 @@ class ChannelAdapter(private val context: Context, private val callback: Callbac
         val item = getItem(position)
         val channelViewHolder = holder as ChannelViewHolder
         channelViewHolder.name.text = item.name
+        channelViewHolder.content.text = item.toJson().toString()
         channelViewHolder.itemView.setOnLongClickListener {
             callback.remove(this, item)
             true
